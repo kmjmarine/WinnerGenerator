@@ -1,0 +1,44 @@
+{
+  "Item1" : {
+    "id" : 1,
+    "team" : "IT팀",
+    "nickname" : "Aeron",
+    "age" : 45
+    "imageURL" : "https://www.shinhancard.com/pconts/images/contents/card/plate/cdCreaditBJABE3.png"
+    "rank" : 1
+  },
+  "Item2" : {
+    "id" : 2,
+    "team" : "IT팀",
+    "nickname" : "River",
+    "imageURL" : "https://www.shinhancard.com/pconts/images/contents/card/plate/cdCreaditBJABE3.png"
+    "age" : 44
+    "rank" : 2
+  },
+  "Item3" : {
+    "id" : 3,
+    "team" : "IT팀",
+    "nickname" : "Jeff",
+    "imageURL" : "https://www.shinhancard.com/pconts/images/contents/card/plate/cdCreaditBJABE3.png"
+    "age" : 32
+    "rank" : 3
+  }
+  },
+  "Item4" : {
+    "id" : 4,
+    "team" : "IT팀",
+    "nickname" : "Jaden",
+    "imageURL" : "https://www.shinhancard.com/pconts/images/contents/card/plate/cdCreaditBJABE3.png"
+    "age" : 32
+    "rank" : 4
+  }
+  },
+  "Item5" : {
+    "id" : 5,
+    "team" : "IT팀",
+    "nickname" : "Sap",
+    "imageURL" : "https://www.shinhancard.com/pconts/images/contents/card/plate/cdCreaditBJABE3.png"
+    "age" : 32
+    "rank" : 5
+  }
+}
