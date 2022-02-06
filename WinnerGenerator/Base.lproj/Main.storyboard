@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="QuotesGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="당첨자 추첨기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUt-A2-tw1">
+                                <rect key="frame" x="24" y="68" width="366" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iJ5-g5-agz">
+                                <rect key="frame" x="24" y="121" width="367" height="200"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hej-cz-gHZ">
+                                        <rect key="frame" x="20" y="20" width="327" height="140"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gD7-8d-U53">
+                                        <rect key="frame" x="20" y="180" width="327" height="0.0"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gD7-8d-U53" secondAttribute="trailing" constant="20" id="3Mx-qB-FNv"/>
+                                    <constraint firstItem="Hej-cz-gHZ" firstAttribute="top" secondItem="iJ5-g5-agz" secondAttribute="top" constant="20" id="917-Fh-dlp"/>
+                                    <constraint firstItem="gD7-8d-U53" firstAttribute="top" secondItem="Hej-cz-gHZ" secondAttribute="bottom" constant="20" id="ASg-CT-BfD"/>
+                                    <constraint firstItem="Hej-cz-gHZ" firstAttribute="leading" secondItem="iJ5-g5-agz" secondAttribute="leading" constant="20" id="DGy-CY-IK3"/>
+                                    <constraint firstItem="Hej-cz-gHZ" firstAttribute="top" secondItem="iJ5-g5-agz" secondAttribute="top" constant="20" id="LrV-hd-tRK"/>
+                                    <constraint firstAttribute="trailing" secondItem="Hej-cz-gHZ" secondAttribute="trailing" constant="20" id="aV6-lB-OtR"/>
+                                    <constraint firstAttribute="bottom" secondItem="gD7-8d-U53" secondAttribute="bottom" constant="20" id="eUL-IS-hwQ"/>
+                                    <constraint firstAttribute="height" constant="200" id="nX7-c8-Ly5"/>
+                                    <constraint firstItem="gD7-8d-U53" firstAttribute="leading" secondItem="iJ5-g5-agz" secondAttribute="leading" constant="20" id="uNp-wJ-w6d"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mt0-kp-iqy">
+                                <rect key="frame" x="163.5" y="341" width="88.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="당첨자 추첨">
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="tabGetWinner:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Ay-8M-q6W"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nUt-A2-tw1" secondAttribute="trailing" constant="24" id="CbG-AU-tED"/>
+                            <constraint firstItem="nUt-A2-tw1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Lya-OY-NCQ"/>
+                            <constraint firstItem="nUt-A2-tw1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="Mb0-gF-FZX"/>
+                            <constraint firstItem="iJ5-g5-agz" firstAttribute="top" secondItem="nUt-A2-tw1" secondAttribute="bottom" constant="24" id="PaM-ma-XsH"/>
+                            <constraint firstItem="Mt0-kp-iqy" firstAttribute="top" secondItem="iJ5-g5-agz" secondAttribute="bottom" constant="20" id="hcm-cm-JTp"/>
+                            <constraint firstItem="Mt0-kp-iqy" firstAttribute="centerX" secondItem="iJ5-g5-agz" secondAttribute="centerX" id="ooQ-19-LvO"/>
+                            <constraint firstItem="iJ5-g5-agz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="pi0-of-p4Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iJ5-g5-agz" secondAttribute="trailing" constant="23" id="stL-8A-me9"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="winnerButton" destination="Mt0-kp-iqy" id="w9t-qv-p6v"/>
+                        <outlet property="winnerInfoLabel" destination="gD7-8d-U53" id="aVh-d2-wSH"/>
+                        <outlet property="winnerLabel" destination="Hej-cz-gHZ" id="pUc-9I-RCi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="45" y="69"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
