@@ -16,6 +16,11 @@
 		E5E7210A27AFD69B001928F6 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7210927AFD69B001928F6 /* Users.swift */; };
 		E5E7210D27AFFFCC001928F6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E5E7210C27AFFFCC001928F6 /* SnapKit */; };
 		E5E7211127B016DE001928F6 /* UserList.json in Resources */ = {isa = PBXBuildFile; fileRef = E5E7211027B016DE001928F6 /* UserList.json */; };
+		E5E7211327B0178F001928F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5E7211227B0178F001928F6 /* GoogleService-Info.plist */; };
+		E5E7211627B01954001928F6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E5E7211527B01954001928F6 /* FirebaseAuth */; };
+		E5E7211827B01954001928F6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E5E7211727B01954001928F6 /* FirebaseDatabase */; };
+		E5E7211A27B01954001928F6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E5E7211927B01954001928F6 /* FirebaseFirestore */; };
+		E5EB544B27B15ABF0094A68F /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB544A27B15ABF0094A68F /* UserList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,8 @@
 		E5E7210127AFCEF1001928F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5E7210927AFD69B001928F6 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		E5E7211027B016DE001928F6 /* UserList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserList.json; sourceTree = "<group>"; };
+		E5E7211227B0178F001928F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E5EB544A27B15ABF0094A68F /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,7 +43,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5E7211827B01954001928F6 /* FirebaseDatabase in Frameworks */,
+				E5E7211A27B01954001928F6 /* FirebaseFirestore in Frameworks */,
 				E5E7210D27AFFFCC001928F6 /* SnapKit in Frameworks */,
+				E5E7211627B01954001928F6 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,11 +75,13 @@
 				E5E720F327AFCEF0001928F6 /* AppDelegate.swift */,
 				E5E720F527AFCEF0001928F6 /* SceneDelegate.swift */,
 				E5E720F727AFCEF0001928F6 /* ViewController.swift */,
+				E5EB544A27B15ABF0094A68F /* UserList.swift */,
 				E5E7210927AFD69B001928F6 /* Users.swift */,
 				E5E720F927AFCEF0001928F6 /* Main.storyboard */,
 				E5E720FC27AFCEF1001928F6 /* Assets.xcassets */,
 				E5E720FE27AFCEF1001928F6 /* LaunchScreen.storyboard */,
 				E5E7210127AFCEF1001928F6 /* Info.plist */,
+				E5E7211227B0178F001928F6 /* GoogleService-Info.plist */,
 				E5E7211027B016DE001928F6 /* UserList.json */,
 			);
 			path = WinnerGenerator;
@@ -93,6 +105,9 @@
 			name = WinnerGenerator;
 			packageProductDependencies = (
 				E5E7210C27AFFFCC001928F6 /* SnapKit */,
+				E5E7211527B01954001928F6 /* FirebaseAuth */,
+				E5E7211727B01954001928F6 /* FirebaseDatabase */,
+				E5E7211927B01954001928F6 /* FirebaseFirestore */,
 			);
 			productName = QuotesGenerator;
 			productReference = E5E720F027AFCEF0001928F6 /* WinnerGenerator.app */;
@@ -124,6 +139,7 @@
 			mainGroup = E5E720E727AFCEF0001928F6;
 			packageReferences = (
 				E5E7210B27AFFFCC001928F6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				E5E7211427B01954001928F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = E5E720F127AFCEF0001928F6 /* Products */;
 			projectDirPath = "";
@@ -141,6 +157,7 @@
 			files = (
 				E5E7211127B016DE001928F6 /* UserList.json in Resources */,
 				E5E7210027AFCEF1001928F6 /* LaunchScreen.storyboard in Resources */,
+				E5E7211327B0178F001928F6 /* GoogleService-Info.plist in Resources */,
 				E5E720FD27AFCEF1001928F6 /* Assets.xcassets in Resources */,
 				E5E720FB27AFCEF0001928F6 /* Main.storyboard in Resources */,
 			);
@@ -153,6 +170,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5EB544B27B15ABF0094A68F /* UserList.swift in Sources */,
 				E5E7210A27AFD69B001928F6 /* Users.swift in Sources */,
 				E5E720F827AFCEF0001928F6 /* ViewController.swift in Sources */,
 				E5E720F427AFCEF0001928F6 /* AppDelegate.swift in Sources */,
@@ -386,6 +404,14 @@
 				kind = branch;
 			};
 		};
+		E5E7211427B01954001928F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -393,6 +419,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E5E7210B27AFFFCC001928F6 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		E5E7211527B01954001928F6 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5E7211427B01954001928F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		E5E7211727B01954001928F6 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5E7211427B01954001928F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		E5E7211927B01954001928F6 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5E7211427B01954001928F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

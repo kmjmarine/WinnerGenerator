@@ -7,8 +7,11 @@
 
 import UIKit
 import SnapKit
+import FirebaseDatabase
 
 class ViewController: UIViewController {
+    var userList: [UserList] = []
+    
     @IBOutlet weak var winnerLabel: UILabel!
     @IBOutlet weak var winnerInfoLabel: UILabel!
     @IBOutlet weak var winnerButton: UIButton!
