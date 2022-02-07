@@ -3,42 +3,54 @@
     "id" : 1,
     "team" : "IT팀",
     "nickname" : "Aeron",
-    "age" : 45
-    "imageURL" : "https://www.shinhancard.com/pconts/images/contents/card/plate/cdCreaditBJABE3.png"
+    "realname" : "김민재",
+    "age" : 45,
+    "imageURL" : "https://www.shinhancard.com/pconts/images/contents/card/plate/cdCreaditBJABE3.png",
     "rank" : 1
   },
   "Item2" : {
     "id" : 2,
     "team" : "IT팀",
     "nickname" : "River",
-    "imageURL" : "https://www.shinhancard.com/pconts/images/contents/card/plate/cdCreaditBJABE3.png"
-    "age" : 44
+    "realname" : "이성진",
+    "imageURL" : "https://static11.samsungcard.com/wcms/scard/personal/__icsFiles/afieldfile/2019/06/12/AAP1482_s.png",
+    "age" : 44,
     "rank" : 2
   },
   "Item3" : {
     "id" : 3,
     "team" : "IT팀",
     "nickname" : "Jeff",
-    "imageURL" : "https://www.shinhancard.com/pconts/images/contents/card/plate/cdCreaditBJABE3.png"
-    "age" : 32
+    "realname" : "강민재",
+    "imageURL" : "https://img1.kbcard.com/ST/img/cxc/kbcard/upload/img/product/09223.png",
+    "age" : 32,
     "rank" : 3
-  }
   },
   "Item4" : {
     "id" : 4,
     "team" : "IT팀",
     "nickname" : "Jaden",
-    "imageURL" : "https://www.shinhancard.com/pconts/images/contents/card/plate/cdCreaditBJABE3.png"
-    "age" : 32
+    "realname" : "강영학",
+    "imageURL" : "https://card.nonghyup.com/content/imgs/shopmall/pro_img/card/F10043.png",
+    "age" : 32,
     "rank" : 4
-  }
   },
   "Item5" : {
     "id" : 5,
     "team" : "IT팀",
     "nickname" : "Sap",
-    "imageURL" : "https://www.shinhancard.com/pconts/images/contents/card/plate/cdCreaditBJABE3.png"
-    "age" : 32
+    "realname" : "김원근",
+    "imageURL" : "https://pc.wooricard.com/webcontent/cdPrdImgFileList/2020/6/30/15a0b20b-f685-4155-a9bf-5e71674ab674.png",
+    "age" : 32,
     "rank" : 5
+  },
+    "Item6" : {
+      "id" : 6,
+      "team" : "",
+      "nickname" : "꽝",
+      "realname" : "다시해!",
+      "imageURL" : "https://www.citibank.co.kr/download/cms/card/master/070045_8.png",
+      "age" : 0,
+      "rank" : 6
   }
 }

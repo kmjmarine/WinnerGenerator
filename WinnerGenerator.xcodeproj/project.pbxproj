@@ -13,14 +13,13 @@
 		E5E720FB27AFCEF0001928F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E720F927AFCEF0001928F6 /* Main.storyboard */; };
 		E5E720FD27AFCEF1001928F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E5E720FC27AFCEF1001928F6 /* Assets.xcassets */; };
 		E5E7210027AFCEF1001928F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5E720FE27AFCEF1001928F6 /* LaunchScreen.storyboard */; };
-		E5E7210A27AFD69B001928F6 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E7210927AFD69B001928F6 /* Users.swift */; };
 		E5E7210D27AFFFCC001928F6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = E5E7210C27AFFFCC001928F6 /* SnapKit */; };
 		E5E7211127B016DE001928F6 /* UserList.json in Resources */ = {isa = PBXBuildFile; fileRef = E5E7211027B016DE001928F6 /* UserList.json */; };
 		E5E7211327B0178F001928F6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E5E7211227B0178F001928F6 /* GoogleService-Info.plist */; };
 		E5E7211627B01954001928F6 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E5E7211527B01954001928F6 /* FirebaseAuth */; };
 		E5E7211827B01954001928F6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E5E7211727B01954001928F6 /* FirebaseDatabase */; };
 		E5E7211A27B01954001928F6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E5E7211927B01954001928F6 /* FirebaseFirestore */; };
-		E5EB544B27B15ABF0094A68F /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB544A27B15ABF0094A68F /* UserList.swift */; };
+		E5EB544B27B15ABF0094A68F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5EB544A27B15ABF0094A68F /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,10 +31,9 @@
 		E5E720FC27AFCEF1001928F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E5E720FF27AFCEF1001928F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E5E7210127AFCEF1001928F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E5E7210927AFD69B001928F6 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		E5E7211027B016DE001928F6 /* UserList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UserList.json; sourceTree = "<group>"; };
 		E5E7211227B0178F001928F6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E5EB544A27B15ABF0094A68F /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
+		E5EB544A27B15ABF0094A68F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +73,7 @@
 				E5E720F327AFCEF0001928F6 /* AppDelegate.swift */,
 				E5E720F527AFCEF0001928F6 /* SceneDelegate.swift */,
 				E5E720F727AFCEF0001928F6 /* ViewController.swift */,
-				E5EB544A27B15ABF0094A68F /* UserList.swift */,
-				E5E7210927AFD69B001928F6 /* Users.swift */,
+				E5EB544A27B15ABF0094A68F /* User.swift */,
 				E5E720F927AFCEF0001928F6 /* Main.storyboard */,
 				E5E720FC27AFCEF1001928F6 /* Assets.xcassets */,
 				E5E720FE27AFCEF1001928F6 /* LaunchScreen.storyboard */,
@@ -170,8 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5EB544B27B15ABF0094A68F /* UserList.swift in Sources */,
-				E5E7210A27AFD69B001928F6 /* Users.swift in Sources */,
+				E5EB544B27B15ABF0094A68F /* User.swift in Sources */,
 				E5E720F827AFCEF0001928F6 /* ViewController.swift in Sources */,
 				E5E720F427AFCEF0001928F6 /* AppDelegate.swift in Sources */,
 				E5E720F627AFCEF0001928F6 /* SceneDelegate.swift in Sources */,

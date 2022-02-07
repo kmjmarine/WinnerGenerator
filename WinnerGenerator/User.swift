@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct UserList: Codable {
+struct User: Codable {
     let id: Int
     let team: String
     let nickname: String
+    let realname: String
     let age: Int
     let imageURL: String
     let rank: Int
