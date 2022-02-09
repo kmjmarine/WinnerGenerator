@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E54AF0EE27B3F191000DEEB9 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54AF0ED27B3F191000DEEB9 /* UserListViewController.swift */; };
+		E54AF0F127B3F29E000DEEB9 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54AF0EF27B3F29E000DEEB9 /* UserListCell.swift */; };
+		E54AF0F227B3F29E000DEEB9 /* UserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E54AF0F027B3F29E000DEEB9 /* UserListCell.xib */; };
+		E54AF0F527B3FFB1000DEEB9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E54AF0F427B3FFB1000DEEB9 /* Kingfisher */; };
+		E54AF0F827B402A6000DEEB9 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54AF0F727B402A6000DEEB9 /* UserDetailViewController.swift */; };
 		E5E720F427AFCEF0001928F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E720F327AFCEF0001928F6 /* AppDelegate.swift */; };
 		E5E720F627AFCEF0001928F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E720F527AFCEF0001928F6 /* SceneDelegate.swift */; };
 		E5E720F827AFCEF0001928F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E720F727AFCEF0001928F6 /* ViewController.swift */; };
@@ -23,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E54AF0ED27B3F191000DEEB9 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
+		E54AF0EF27B3F29E000DEEB9 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
+		E54AF0F027B3F29E000DEEB9 /* UserListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListCell.xib; sourceTree = "<group>"; };
+		E54AF0F727B402A6000DEEB9 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		E5E720F027AFCEF0001928F6 /* WinnerGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinnerGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E720F327AFCEF0001928F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E5E720F527AFCEF0001928F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,12 +54,31 @@
 				E5E7211A27B01954001928F6 /* FirebaseFirestore in Frameworks */,
 				E5E7210D27AFFFCC001928F6 /* SnapKit in Frameworks */,
 				E5E7211627B01954001928F6 /* FirebaseAuth in Frameworks */,
+				E54AF0F527B3FFB1000DEEB9 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E54AF0F627B3FFCD000DEEB9 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				E54AF0EF27B3F29E000DEEB9 /* UserListCell.swift */,
+				E54AF0F027B3F29E000DEEB9 /* UserListCell.xib */,
+				E54AF0ED27B3F191000DEEB9 /* UserListViewController.swift */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		E54AF0F927B402B3000DEEB9 /* UserDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				E54AF0F727B402A6000DEEB9 /* UserDetailViewController.swift */,
+			);
+			path = UserDetailView;
+			sourceTree = "<group>";
+		};
 		E5E720E727AFCEF0001928F6 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +103,8 @@
 				E5E720F727AFCEF0001928F6 /* ViewController.swift */,
 				E5EB544A27B15ABF0094A68F /* User.swift */,
 				E5E720F927AFCEF0001928F6 /* Main.storyboard */,
+				E54AF0F927B402B3000DEEB9 /* UserDetailView */,
+				E54AF0F627B3FFCD000DEEB9 /* UserList */,
 				E5E720FC27AFCEF1001928F6 /* Assets.xcassets */,
 				E5E720FE27AFCEF1001928F6 /* LaunchScreen.storyboard */,
 				E5E7210127AFCEF1001928F6 /* Info.plist */,
@@ -105,6 +135,7 @@
 				E5E7211527B01954001928F6 /* FirebaseAuth */,
 				E5E7211727B01954001928F6 /* FirebaseDatabase */,
 				E5E7211927B01954001928F6 /* FirebaseFirestore */,
+				E54AF0F427B3FFB1000DEEB9 /* Kingfisher */,
 			);
 			productName = QuotesGenerator;
 			productReference = E5E720F027AFCEF0001928F6 /* WinnerGenerator.app */;
@@ -137,6 +168,7 @@
 			packageReferences = (
 				E5E7210B27AFFFCC001928F6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				E5E7211427B01954001928F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E54AF0F327B3FFB0000DEEB9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = E5E720F127AFCEF0001928F6 /* Products */;
 			projectDirPath = "";
@@ -152,6 +184,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E54AF0F227B3F29E000DEEB9 /* UserListCell.xib in Resources */,
 				E5E7211127B016DE001928F6 /* UserList.json in Resources */,
 				E5E7210027AFCEF1001928F6 /* LaunchScreen.storyboard in Resources */,
 				E5E7211327B0178F001928F6 /* GoogleService-Info.plist in Resources */,
@@ -167,6 +200,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E54AF0F827B402A6000DEEB9 /* UserDetailViewController.swift in Sources */,
+				E54AF0F127B3F29E000DEEB9 /* UserListCell.swift in Sources */,
+				E54AF0EE27B3F191000DEEB9 /* UserListViewController.swift in Sources */,
 				E5EB544B27B15ABF0094A68F /* User.swift in Sources */,
 				E5E720F827AFCEF0001928F6 /* ViewController.swift in Sources */,
 				E5E720F427AFCEF0001928F6 /* AppDelegate.swift in Sources */,
@@ -392,6 +428,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E54AF0F327B3FFB0000DEEB9 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		E5E7210B27AFFFCC001928F6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -411,6 +455,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E54AF0F427B3FFB1000DEEB9 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E54AF0F327B3FFB0000DEEB9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		E5E7210C27AFFFCC001928F6 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E5E7210B27AFFFCC001928F6 /* XCRemoteSwiftPackageReference "SnapKit" */;

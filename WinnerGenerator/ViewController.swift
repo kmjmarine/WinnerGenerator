@@ -19,15 +19,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var winnerImageView: UIImageView!
     @IBOutlet weak var winnerButton: UIButton!
     
-    //let users = applyList
-//    let users = [
-//        Users(teamName: "IT팀", nickName: "Aeron", realName: "김민재", age: 45),
-//        Users(teamName: "IT팀", nickName: "River", realName: "이성진", age: 44),
-//        Users(teamName: "IT팀", nickName: "Sap", realName: "김원근", age: 32),
-//        Users(teamName: "IT팀", nickName: "Jaden", realName: "강영학", age: 32),
-//        Users(teamName: "IT팀", nickName: "Jeff", realName: "강민재", age: 32)
-//    ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
