@@ -104,9 +104,9 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="aaz-hn-s98">
-                        <barButtonItem key="rightBarButtonItem" title="설정" id="VVP-Pt-ZBI">
+                        <barButtonItem key="rightBarButtonItem" title="참가자 설정" id="VVP-Pt-ZBI">
                             <connections>
-                                <segue destination="2Hy-7m-Fph" kind="show" id="gH9-SG-n72"/>
+                                <segue destination="OaE-nN-a1a" kind="show" id="Ekm-OQ-ggx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -122,23 +122,76 @@
             </objects>
             <point key="canvasLocation" x="-78.260869565217391" y="-218.30357142857142"/>
         </scene>
-        <!--설정-->
-        <scene sceneID="48o-wL-zMk">
+        <!--참가자 설정-->
+        <scene sceneID="Nne-3q-VxK">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="j63-Er-3Mb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <viewController id="2Hy-7m-Fph" sceneMemberID="viewController">
-                    <tableViewCell key="view" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserListCell" id="gqG-SC-5l1" customClass="UserListCell" customModule="WinnerGenerator" customModuleProvider="target">
+                <tableViewController storyboardIdentifier="UserListViewController" id="OaE-nN-a1a" customClass="UserListViewController" customModule="WinnerGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Yw4-V4-3fE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gqG-SC-5l1" id="3w4-ll-deu">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                        </tableViewCellContentView>
-                    </tableViewCell>
-                    <navigationItem key="navigationItem" title="설정" id="eUZ-Fm-8BE"/>
-                </viewController>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserListCell" id="qeP-4Y-GWc" customClass="UserListCell" customModule="WinnerGenerator" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qeP-4Y-GWc" id="GU6-tx-esb">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OaE-nN-a1a" id="zk3-ww-FBz"/>
+                            <outlet property="delegate" destination="OaE-nN-a1a" id="zgw-JH-xo7"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="참가자 설정" id="dZU-CO-efg"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pq5-Cv-JUA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="639" y="-218"/>
+            <point key="canvasLocation" x="633" y="-218"/>
+        </scene>
+        <!--참가자 설정 상세-->
+        <scene sceneID="YdL-Pk-hO8">
+            <objects>
+                <viewController id="cdL-LS-Wan" customClass="UserDetailViewController" customModule="WinnerGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iBo-rw-jOF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GS1-TT-6gS">
+                                <rect key="frame" x="20" y="326.5" width="374" height="253.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="테스트 테스트" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCW-9w-rVf">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="33.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ql-D6-DJP">
+                                        <rect key="frame" x="0.0" y="53.5" width="374" height="200"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="We0-eS-3Ov"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4Le-Ny-3mN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GS1-TT-6gS" firstAttribute="centerX" secondItem="4Le-Ny-3mN" secondAttribute="centerX" id="AfG-VK-vUy"/>
+                            <constraint firstItem="GS1-TT-6gS" firstAttribute="leading" secondItem="4Le-Ny-3mN" secondAttribute="leading" constant="20" id="J4G-YU-6Y7"/>
+                            <constraint firstItem="4Le-Ny-3mN" firstAttribute="trailing" secondItem="GS1-TT-6gS" secondAttribute="trailing" constant="20" id="Jhf-5J-lP4"/>
+                            <constraint firstItem="GS1-TT-6gS" firstAttribute="centerY" secondItem="4Le-Ny-3mN" secondAttribute="centerY" id="aVi-g4-c3I"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="참가자 설정 상세" id="9pC-4e-v9h" customClass="UserDetailView"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h4N-1v-t2I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1338" y="-218"/>
         </scene>
     </scenes>
     <resources>

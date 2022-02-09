@@ -66,7 +66,6 @@
 			children = (
 				E54AF0EF27B3F29E000DEEB9 /* UserListCell.swift */,
 				E54AF0F027B3F29E000DEEB9 /* UserListCell.xib */,
-				E54AF0ED27B3F191000DEEB9 /* UserListViewController.swift */,
 			);
 			path = UserList;
 			sourceTree = "<group>";
@@ -101,6 +100,7 @@
 				E5E720F327AFCEF0001928F6 /* AppDelegate.swift */,
 				E5E720F527AFCEF0001928F6 /* SceneDelegate.swift */,
 				E5E720F727AFCEF0001928F6 /* ViewController.swift */,
+				E54AF0ED27B3F191000DEEB9 /* UserListViewController.swift */,
 				E5EB544A27B15ABF0094A68F /* User.swift */,
 				E5E720F927AFCEF0001928F6 /* Main.storyboard */,
 				E54AF0F927B402B3000DEEB9 /* UserDetailView */,

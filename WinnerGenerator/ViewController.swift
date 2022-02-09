@@ -12,7 +12,7 @@ import FirebaseDatabase
 class ViewController: UIViewController {
     var ref: DatabaseReference! //Firebase RealTime Database를 가져오는 레퍼런스 선언
     
-    var applyList: [User] = []
+    var userList: [User] = []
     
     @IBOutlet weak var winnerLabel: UILabel!
     @IBOutlet weak var winnerInfoLabel: UILabel!
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
                 let jsonData = try JSONSerialization.data(withJSONObject: value)
                 let userData = try JSONDecoder().decode([String: User].self, from: jsonData)
                 let userList = Array(userData.values)
-                self.applyList = userList
+                self.userList = userList
                
          
                 //view갱신은 메인 스레드에서 해야함
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
 
     @IBAction func tabGetWinner(_ sender: UIButton){
         let random = Int.random(in: 0...4) //0 ~ 4 사이의 난수를 발생
-        let user = self.applyList[random]
+        let user = self.userList[random]
         let url = URL(string: user.imageURL)
         
         self.winnerLabel.text = ("\(user.nickname) 님 당첨을 축하합니다.")
