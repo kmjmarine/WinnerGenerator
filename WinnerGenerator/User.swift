@@ -15,4 +15,5 @@ struct User: Codable {
     let age: Int
     let imageURL: String
     let rank: Int
+    let wincount: Int
 }

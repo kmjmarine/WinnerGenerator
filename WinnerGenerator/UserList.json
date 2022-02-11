@@ -6,7 +6,8 @@
     "realname" : "김민재",
     "age" : 45,
     "imageURL" : "https://testhrs.haveandbe.com/img/aeron.jfif",
-    "rank" : 1
+    "rank" : 1,
+    "wincount" : 0
   },
   "Item2" : {
     "id" : 2,
@@ -15,7 +16,8 @@
     "realname" : "이성진",
     "imageURL" : "https://testhrs.haveandbe.com/img/river.jfif",
     "age" : 44,
-    "rank" : 2
+    "rank" : 2,
+    "wincount" : 0
   },
   "Item3" : {
     "id" : 3,
@@ -24,7 +26,8 @@
     "realname" : "강민재",
     "imageURL" : "https://testhrs.haveandbe.com/img/jeff.jfif",
     "age" : 32,
-    "rank" : 3
+    "rank" : 3,
+    "wincount" : 0
   },
   "Item4" : {
     "id" : 4,
@@ -33,7 +36,8 @@
     "realname" : "강영학",
     "imageURL" : "https://res-1.cdn.office.net/midgard/versionless/silhouette_delve_e0c916b09c07f8f682e78877333d30ce.png",
     "age" : 32,
-    "rank" : 4
+    "rank" : 4,
+    "wincount" : 0
   },
   "Item5" : {
     "id" : 5,
@@ -42,7 +46,8 @@
     "realname" : "김원근",
     "imageURL" : "https://testhrs.haveandbe.com/img/sap.jfif",
     "age" : 32,
-    "rank" : 5
+    "rank" : 5,
+    "wincount" : 0
   },
     "Item6" : {
       "id" : 6,
@@ -51,6 +56,7 @@
       "realname" : "다시해!",
       "imageURL" : "https://res-1.cdn.office.net/midgard/versionless/silhouette_delve_e0c916b09c07f8f682e78877333d30ce.png",
       "age" : 0,
-      "rank" : 6
+      "rank" : 6,
+      "wincount" : 0
   }
 }

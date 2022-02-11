@@ -8,5 +8,9 @@
 import UIKit
 
 final class UserDetailViewController: UIViewController {
+    var userDetail: User?
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }

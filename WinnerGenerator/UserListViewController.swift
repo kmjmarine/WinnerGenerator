@@ -62,4 +62,13 @@ final class UserListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 120
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //상세화면 전달
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let detailViewController = storyboard.instantiateViewController(identifier: "UserDetailViewController") as? UserDetailViewController else { return }
+   
+        detailViewController.userDetail = userList[indexPath.row]
+        self.show(detailViewController, sender: nil)
+    }
 }
