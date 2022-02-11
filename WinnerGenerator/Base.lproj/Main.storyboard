@@ -162,10 +162,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uz-Mx-PgH">
-                                <rect key="frame" x="87" y="108" width="240" height="138"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tvd-05-NX8">
                                 <rect key="frame" x="20" y="359.5" width="374" height="182.5"/>
                                 <subviews>
@@ -262,6 +258,10 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uz-Mx-PgH">
+                                <rect key="frame" x="87" y="161" width="240" height="138"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Le-Ny-3mN"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -273,6 +273,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="참가자 설정 상세" id="9pC-4e-v9h"/>
+                    <connections>
+                        <outlet property="ageLabel" destination="wQI-jc-HNj" id="Dd2-mg-lDG"/>
+                        <outlet property="imageView" destination="2uz-Mx-PgH" id="OfX-kq-s9Q"/>
+                        <outlet property="nickNameLabel" destination="fpK-wv-1Tj" id="P8u-cH-eQG"/>
+                        <outlet property="realNameLabel" destination="Dso-dg-mND" id="0e7-zC-9Lr"/>
+                        <outlet property="teamLabel" destination="i3a-XK-Ulj" id="5xE-WH-dQl"/>
+                        <outlet property="winCountLabel" destination="rUQ-MV-fWg" id="ezM-Tw-leZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h4N-1v-t2I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
