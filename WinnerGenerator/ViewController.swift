@@ -26,19 +26,13 @@ class ViewController: UIViewController {
         
         ref = Database.database().reference()
         ref.observe(.value) { snapshot in
-            guard let value = snapshot.value as? [String: [String: Any]] else { return }
+            guard let value = snapshot.value as? [String: Any] else { return }
             
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: value)
                 let userData = try JSONDecoder().decode([String: User].self, from: jsonData)
                 let userList = Array(userData.values)
                 self.userList = userList
-               
-         
-                //view갱신은 메인 스레드에서 해야함
-//                DispatchQueue.main.async {
-//                    //self.UIViewController.reloadData()
-//                }
             } catch let error {
                 print("ERROR JSON Parsing \(error.localizedDescription)")
             }
@@ -49,6 +43,7 @@ class ViewController: UIViewController {
         let random = Int.random(in: 0...4) //0 ~ 4 사이의 난수를 발생
         let user = self.userList[random]
         let url = URL(string: user.imageURL)
+        let currentWinCount = user.wincount
         
         self.winnerLabel.text = ("\(user.nickname) 님 당첨을 축하합니다.")
         self.winnerInfoLabel.text = ("\(user.team) \(user.realname) (\(user.age)세)")
@@ -59,6 +54,8 @@ class ViewController: UIViewController {
         } catch let error {
             print("ERROR Image Parsing \(error.localizedDescription)")
         }
+        //당첨횟수 +1
+        self.ref.child("Item\(user.id)/wincount").setValue(currentWinCount + 1)
     }
 }
 

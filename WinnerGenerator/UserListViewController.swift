@@ -23,7 +23,7 @@ final class UserListViewController: UITableViewController {
         
         ref = Database.database().reference()
         ref.observe(.value) { snapshot in
-            guard let value = snapshot.value as? [String: [String: Any]] else { return }
+            guard let value = snapshot.value as? [String: Any] else { return }
             
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: value)
