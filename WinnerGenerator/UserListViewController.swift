@@ -8,11 +8,13 @@
 import UIKit
 import Kingfisher
 import FirebaseDatabase
+import SwiftUI
 
 final class UserListViewController: UITableViewController {
     var ref: DatabaseReference! //Firebase RealTime Database를 가져오는 레퍼런스 선언
     
     var userList: [User] = []
+    var totalWinCount: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,11 @@ final class UserListViewController: UITableViewController {
                 let userData = try JSONDecoder().decode([String: User].self, from: jsonData)
                 let userList = Array(userData.values)
                 self.userList = userList.sorted{ $0.rank < $1.rank }
+                
+                //총 당첨수 구하기
+                for i in 0...(userList.count - 1) {
+                    self.totalWinCount = self.totalWinCount + self.userList[i].wincount
+                }
          
                 //view갱신은 메인 스레드에서 해야함
                 DispatchQueue.main.async {
@@ -69,6 +76,7 @@ final class UserListViewController: UITableViewController {
         guard let detailViewController = storyboard.instantiateViewController(identifier: "UserDetailViewController") as? UserDetailViewController else { return }
    
         detailViewController.userDetail = userList[indexPath.row]
+        detailViewController.totalWinCount = totalWinCount
         self.show(detailViewController, sender: nil)
     }
 }

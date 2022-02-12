@@ -88,15 +88,23 @@
                                     <action selector="tabGetWinner:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Ay-8M-q6W"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XUF-eJ-Qxa" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="24" y="437.5" width="366" height="351.5"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="XUF-eJ-Qxa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="4yD-X4-JgI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XUF-eJ-Qxa" secondAttribute="bottom" constant="24" id="8Xp-vC-SZt"/>
+                            <constraint firstItem="XUF-eJ-Qxa" firstAttribute="top" secondItem="Mt0-kp-iqy" secondAttribute="bottom" constant="24" id="BRT-jv-fUm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nUt-A2-tw1" secondAttribute="trailing" constant="24" id="CbG-AU-tED"/>
                             <constraint firstItem="nUt-A2-tw1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="Lya-OY-NCQ"/>
                             <constraint firstItem="nUt-A2-tw1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="Mb0-gF-FZX"/>
                             <constraint firstItem="iJ5-g5-agz" firstAttribute="top" secondItem="nUt-A2-tw1" secondAttribute="bottom" constant="24" id="PaM-ma-XsH"/>
                             <constraint firstItem="Mt0-kp-iqy" firstAttribute="top" secondItem="iJ5-g5-agz" secondAttribute="bottom" constant="20" id="hcm-cm-JTp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XUF-eJ-Qxa" secondAttribute="trailing" constant="24" id="jwr-NY-tEC"/>
                             <constraint firstItem="Mt0-kp-iqy" firstAttribute="centerX" secondItem="iJ5-g5-agz" secondAttribute="centerX" id="ooQ-19-LvO"/>
                             <constraint firstItem="iJ5-g5-agz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="pi0-of-p4Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iJ5-g5-agz" secondAttribute="trailing" constant="23" id="stL-8A-me9"/>
@@ -112,6 +120,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="pieChartView" destination="XUF-eJ-Qxa" id="p5T-Ba-MpZ"/>
                         <outlet property="winnerButton" destination="Mt0-kp-iqy" id="w9t-qv-p6v"/>
                         <outlet property="winnerImageView" destination="H7E-jQ-4MO" id="JJ2-dy-lS5"/>
                         <outlet property="winnerInfoLabel" destination="gD7-8d-U53" id="aVh-d2-wSH"/>
@@ -162,8 +171,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tvd-05-NX8">
-                                <rect key="frame" x="20" y="359.5" width="374" height="182.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Tvd-05-NX8">
+                                <rect key="frame" x="20" y="359.5" width="374" height="223"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Yo2-Gd-x8i">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
@@ -256,6 +265,23 @@
                                             </label>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="VP3-L0-NIz">
+                                        <rect key="frame" x="0.0" y="202.5" width="374" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="당첨확률" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKL-uh-kOa">
+                                                <rect key="frame" x="0.0" y="0.0" width="59" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXI-7L-bLg">
+                                                <rect key="frame" x="75" y="0.0" width="299" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uz-Mx-PgH">
@@ -279,6 +305,7 @@
                         <outlet property="nickNameLabel" destination="fpK-wv-1Tj" id="P8u-cH-eQG"/>
                         <outlet property="realNameLabel" destination="Dso-dg-mND" id="0e7-zC-9Lr"/>
                         <outlet property="teamLabel" destination="i3a-XK-Ulj" id="5xE-WH-dQl"/>
+                        <outlet property="totalWinCountLabel" destination="nXI-7L-bLg" id="D64-se-oXN"/>
                         <outlet property="winCountLabel" destination="rUQ-MV-fWg" id="ezM-Tw-leZ"/>
                     </connections>
                 </viewController>

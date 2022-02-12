@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import FirebaseDatabase
+import Charts
 
 class ViewController: UIViewController {
     var ref: DatabaseReference! //Firebase RealTime Database를 가져오는 레퍼런스 선언
@@ -18,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var winnerInfoLabel: UILabel!
     @IBOutlet weak var winnerImageView: UIImageView!
     @IBOutlet weak var winnerButton: UIButton!
+    @IBOutlet weak var pieChartView: PieChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +35,41 @@ class ViewController: UIViewController {
                 let userData = try JSONDecoder().decode([String: User].self, from: jsonData)
                 let userList = Array(userData.values)
                 self.userList = userList
+                
+                self.configureChartView(userList: userList)
             } catch let error {
                 print("ERROR JSON Parsing \(error.localizedDescription)")
             }
         }
+    }
+    
+    func configureChartView(userList: [User]) {
+        let entries = userList.compactMap { [weak self] userinfo -> PieChartDataEntry? in
+            guard let self = self else { return nil } //일시적으로 self가 strong method가 되게 함.
+            
+            return PieChartDataEntry(
+                value: Double(userinfo.wincount),
+                label: userinfo.nickname,
+                data: nil
+            )
+        }
+        let dataSet = PieChartDataSet(entries: entries, label: "누적 당첨 현황")
+        dataSet.sliceSpace = 1
+        dataSet.entryLabelColor = .label
+        dataSet.valueTextColor = .label
+        dataSet.xValuePosition = .outsideSlice
+        dataSet.valueLinePart1OffsetPercentage = 0.8
+        dataSet.valueLinePart1Length = 0.2
+        dataSet.valueLinePart2Length = 0.3
+        
+        dataSet.colors = ChartColorTemplates.vordiplom() +
+        ChartColorTemplates.joyful() +
+        ChartColorTemplates.liberty() +
+        ChartColorTemplates.pastel() +
+        ChartColorTemplates.material()
+        
+        self.pieChartView.data = PieChartData(dataSet: dataSet)
+        self.pieChartView.spin(duration: 0.3, fromAngle: self.pieChartView.rotationAngle, toAngle: self.pieChartView.rotationAngle + 80)
     }
 
     @IBAction func tabGetWinner(_ sender: UIButton){

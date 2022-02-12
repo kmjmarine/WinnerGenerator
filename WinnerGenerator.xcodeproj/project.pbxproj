@@ -12,6 +12,7 @@
 		E54AF0F227B3F29E000DEEB9 /* UserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E54AF0F027B3F29E000DEEB9 /* UserListCell.xib */; };
 		E54AF0F527B3FFB1000DEEB9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E54AF0F427B3FFB1000DEEB9 /* Kingfisher */; };
 		E54AF0F827B402A6000DEEB9 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54AF0F727B402A6000DEEB9 /* UserDetailViewController.swift */; };
+		E583727627B822980040A289 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = E583727527B822980040A289 /* Charts */; };
 		E5E720F427AFCEF0001928F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E720F327AFCEF0001928F6 /* AppDelegate.swift */; };
 		E5E720F627AFCEF0001928F6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E720F527AFCEF0001928F6 /* SceneDelegate.swift */; };
 		E5E720F827AFCEF0001928F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E720F727AFCEF0001928F6 /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E5E7211827B01954001928F6 /* FirebaseDatabase in Frameworks */,
+				E583727627B822980040A289 /* Charts in Frameworks */,
 				E5E7211A27B01954001928F6 /* FirebaseFirestore in Frameworks */,
 				E5E7210D27AFFFCC001928F6 /* SnapKit in Frameworks */,
 				E5E7211627B01954001928F6 /* FirebaseAuth in Frameworks */,
@@ -136,6 +138,7 @@
 				E5E7211727B01954001928F6 /* FirebaseDatabase */,
 				E5E7211927B01954001928F6 /* FirebaseFirestore */,
 				E54AF0F427B3FFB1000DEEB9 /* Kingfisher */,
+				E583727527B822980040A289 /* Charts */,
 			);
 			productName = QuotesGenerator;
 			productReference = E5E720F027AFCEF0001928F6 /* WinnerGenerator.app */;
@@ -169,6 +172,7 @@
 				E5E7210B27AFFFCC001928F6 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				E5E7211427B01954001928F6 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				E54AF0F327B3FFB0000DEEB9 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				E583727427B822980040A289 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = E5E720F127AFCEF0001928F6 /* Products */;
 			projectDirPath = "";
@@ -436,6 +440,14 @@
 				kind = branch;
 			};
 		};
+		E583727427B822980040A289 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		E5E7210B27AFFFCC001928F6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -459,6 +471,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = E54AF0F327B3FFB0000DEEB9 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		E583727527B822980040A289 /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E583727427B822980040A289 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
 		};
 		E5E7210C27AFFFCC001928F6 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
