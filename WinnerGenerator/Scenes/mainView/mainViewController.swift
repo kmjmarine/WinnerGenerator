@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  mainViewController.swift
 //  QuotesGenerator
 //
 //  Created by kmjmarine on 2022/02/06.
@@ -9,22 +9,23 @@ import UIKit
 import SnapKit
 import FirebaseDatabase
 import Charts
+import SwiftUI
 
-class ViewController: UIViewController {
+class mainViewController: UIViewController {
     var ref: DatabaseReference! //Firebase RealTime Database를 가져오는 레퍼런스 선언
     
     var userList: [User] = []
     
-    @IBOutlet weak var winnerLabel: UILabel!
-    @IBOutlet weak var winnerInfoLabel: UILabel!
-    @IBOutlet weak var winnerImageView: UIImageView!
-    @IBOutlet weak var winnerButton: UIButton!
-    @IBOutlet weak var pieChartView: PieChartView!
-    
+    //메인 뷰 영역
+    lazy var mainView: mainView = {
+        return WinnerGenerator.mainView(frame: self.view.bounds)
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setButtonLayout()
+        setNaviagtionBar()
+        view = mainView
         
         ref = Database.database().reference()
         ref.observe(.value) { snapshot in
@@ -41,6 +42,27 @@ class ViewController: UIViewController {
                 print("ERROR JSON Parsing \(error.localizedDescription)")
             }
         }
+        
+        mainView.winnerButton.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+    }
+    
+    @objc func didTapButton() {
+        let random = Int.random(in: 0...4) //0 ~ 4 사이의 난수를 발생
+        let user = self.userList[random]
+        let url = URL(string: user.imageURL)
+        let currentWinCount = user.wincount
+
+        mainView.winnerLabel.text = ("\(user.nickname) 님 당첨을 축하합니다.")
+        mainView.winnerInfoLabel.text = ("\(user.team) \(user.realname) (\(user.age)세)")
+
+        do {
+            let data = try Data(contentsOf: url!)
+            mainView.winnerImageView.image = UIImage(data: data)
+        } catch let error {
+            print("ERROR Image Parsing \(error.localizedDescription)")
+        }
+        //당첨횟수 +1
+        self.ref.child("Item\(user.id)/wincount").setValue(currentWinCount + 1)
     }
     
     func configureChartView(userList: [User]) {
@@ -53,6 +75,7 @@ class ViewController: UIViewController {
                 data: nil
             )
         }
+        
         let dataSet = PieChartDataSet(entries: entries, label: "누적 당첨 현황")
         dataSet.sliceSpace = 1
         dataSet.entryLabelColor = .label
@@ -68,43 +91,17 @@ class ViewController: UIViewController {
         ChartColorTemplates.pastel() +
         ChartColorTemplates.material()
         
-        self.pieChartView.data = PieChartData(dataSet: dataSet)
-        self.pieChartView.spin(duration: 0.3, fromAngle: self.pieChartView.rotationAngle, toAngle: self.pieChartView.rotationAngle + 80)
-    }
-
-    @IBAction func tabGetWinner(_ sender: UIButton){
-        let random = Int.random(in: 0...4) //0 ~ 4 사이의 난수를 발생
-        let user = self.userList[random]
-        let url = URL(string: user.imageURL)
-        let currentWinCount = user.wincount
-        
-        self.winnerLabel.text = ("\(user.nickname) 님 당첨을 축하합니다.")
-        self.winnerInfoLabel.text = ("\(user.team) \(user.realname) (\(user.age)세)")
-        
-        do {
-            let data = try Data(contentsOf: url!)
-            winnerImageView.image = UIImage(data: data)
-        } catch let error {
-            print("ERROR Image Parsing \(error.localizedDescription)")
-        }
-        //당첨횟수 +1
-        self.ref.child("Item\(user.id)/wincount").setValue(currentWinCount + 1)
+        mainView.pieChartView.data = PieChartData(dataSet: dataSet)
+        mainView.pieChartView.spin(duration: 0.3, fromAngle: mainView.pieChartView.rotationAngle, toAngle: mainView.pieChartView.rotationAngle + 80)
     }
 }
 
-extension ViewController {
-    func setButtonLayout() {
-        winnerButton.backgroundColor = .lightGray
-        winnerButton.layer.borderWidth = 1.0
-        winnerButton.layer.borderColor = UIColor.black.cgColor
-        winnerButton.layer.cornerRadius = 4.0
-        winnerButton.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(25.0)
-        }
+private extension mainViewController {
+    func setNaviagtionBar() {
+        navigationItem.title = "당첨자 추첨기"
         
-        //winnerImageView.backgroundColor = .red
-        winnerImageView.layer.cornerRadius = winnerImageView.frame.size.width / 2
-        winnerImageView.clipsToBounds = true
+        //rightBarButtonItem 추가 영역
     }
 }
+
 
