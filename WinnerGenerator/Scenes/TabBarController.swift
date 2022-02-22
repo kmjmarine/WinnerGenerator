@@ -13,7 +13,7 @@ final class TabBarController: UITabBarController {
         
         let mainViewController = UINavigationController(rootViewController: mainViewController())
         mainViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
-        let settingViewController = UserListViewController()
+        let settingViewController = UINavigationController(rootViewController: UserListViewController())
         settingViewController.tabBarItem = UITabBarItem(title: nil, image: UIImage(systemName: "person"), selectedImage: UIImage(systemName: "person.fill"))
         
         viewControllers = [mainViewController, settingViewController]

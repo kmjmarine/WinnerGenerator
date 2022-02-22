@@ -12,12 +12,13 @@ import Charts
 final class mainView: UIView {
     lazy var winnerImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.layer.cornerRadius = 40.0
+        imageView.layer.cornerRadius = 50.0
         imageView.layer.borderWidth = 1.0
         imageView.layer.borderColor = UIColor.quaternaryLabel.cgColor
-        //imageView.backgroundColor = .tertiaryLabel
+        imageView.backgroundColor = .tertiaryLabel
         imageView.image = UIImage(systemName: "person")
         imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
         
         return imageView
     }()
@@ -26,7 +27,7 @@ final class mainView: UIView {
         let label = UILabel()
         label.textColor = .label
         label.font = .systemFont(ofSize: 24.0, weight: .bold)
-        label.text = "Aeron님 당첨을 축하합니다."
+        label.text = "추첨을 해주세요."
         label.textAlignment = .center
         
         return label
@@ -36,7 +37,8 @@ final class mainView: UIView {
         let label = UILabel()
         label.textColor = .label
         label.font = .systemFont(ofSize: 18.0, weight: .semibold)
-        label.text = "IT팀 김민재 (45세)"
+        label.text = "두근두근"
+        label.textAlignment = .center
         
         return label
     }()
@@ -83,15 +85,13 @@ private extension mainView {
         }
         
         winnerLabel.snp.makeConstraints {
-            //$0.leading.equalToSuperview().inset(24.0)
             $0.top.equalTo(winnerImageView.snp.bottom).offset(14.0)
             $0.width.equalToSuperview()
-            $0.height.equalTo(20.0)
+            $0.height.equalTo(25.0)
         }
         
         winnerInfoLabel.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(24.0)
-            $0.top.equalTo(winnerLabel.snp.bottom).offset(60.0)
+            $0.top.equalTo(winnerLabel.snp.bottom).offset(55.0)
             $0.width.equalToSuperview()
             $0.height.equalTo(20.0)
         }

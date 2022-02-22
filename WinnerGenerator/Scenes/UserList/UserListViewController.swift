@@ -8,9 +8,17 @@
 import UIKit
 import Kingfisher
 import FirebaseDatabase
-import SwiftUI
+import SnapKit
 
 final class UserListViewController: UITableViewController {
+// 리프래쉬 TODO 지하철 정보 앱 참조
+//    private lazy var refreshControl: UIRefreshControl = {
+//        let refreshControl = UIRefreshControl()
+//        refreshControl.addTarget(self, action: #selector(fetchData), for: .valueChanged)
+//
+//        return refreshControl
+//    }()
+    
     var ref: DatabaseReference! //Firebase RealTime Database를 가져오는 레퍼런스 선언
     
     var userList: [User] = []
@@ -19,9 +27,10 @@ final class UserListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //UITableView Cell Register
-        let nibName = UINib(nibName: "UserListCell", bundle: nil)
-        tableView.register(nibName, forCellReuseIdentifier: "UserListCell")
+        setNaviagtionBar()
+        
+        tableView.register(UserListCell.self, forCellReuseIdentifier: "UserListCell")
+        tableView.rowHeight = 80
         
         ref = Database.database().reference()
         ref.observe(.value) { snapshot in
@@ -47,7 +56,22 @@ final class UserListViewController: UITableViewController {
             }
         }
     }
-    
+}
+
+private extension UserListViewController {
+    func setNaviagtionBar() {
+        navigationItem.title = "참여자 정보"
+        
+        //rightBarButtonItem 추가 영역
+        let rightButton = UIBarButtonItem(
+            image: UIImage(systemName: "ellipsis"), style: .plain, target: self, action: nil
+        )
+        
+        navigationItem.rightBarButtonItem = rightButton
+    }
+}
+
+extension UserListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return userList.count
     }
@@ -55,28 +79,18 @@ final class UserListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "UserListCell", for: indexPath) as? UserListCell else { return UITableViewCell() }
         
-        cell.teamNameLabel.text = userList[indexPath.row].team
-        cell.nickNameLabel.text = userList[indexPath.row].nickname
-        cell.ageLabel.text = "\(userList[indexPath.row].age)세"
+        let userList = userList[indexPath.row]
+        cell.configure(with: userList)
         
-        //Kingfisher 사용 구문 (이미지를 다운로드 받지 않고 URL형태를 이미지로 보여줌)
-        let imageURL = URL(string: userList[indexPath.row].imageURL)
-        cell.userImageView.kf.setImage(with: imageURL)
-       
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //상세화면 전달
-        //let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //guard let detailViewController = storyboard.instantiateViewController(identifier: "UserDetailViewController") as? UserDetailViewController else { return }
-   
-        //detailViewController.userDetail = userList[indexPath.row]
-        //detailViewController.totalWinCount = totalWinCount
-        //self.show(detailViewController, sender: nil)
+        let selectedUser = userList[indexPath.row]
+        let detailViewContoller = UserDetailViewController()
+        
+        detailViewContoller.userDetail = selectedUser
+        self.show(detailViewContoller, sender: totalWinCount)
     }
 }
+
