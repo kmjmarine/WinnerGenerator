@@ -11,14 +11,6 @@ import FirebaseDatabase
 import SnapKit
 
 final class UserListViewController: UITableViewController {
-// 리프래쉬 TODO 지하철 정보 앱 참조
-//    private lazy var refreshControl: UIRefreshControl = {
-//        let refreshControl = UIRefreshControl()
-//        refreshControl.addTarget(self, action: #selector(fetchData), for: .valueChanged)
-//
-//        return refreshControl
-//    }()
-    
     var ref: DatabaseReference! //Firebase RealTime Database를 가져오는 레퍼런스 선언
     
     var userList: [User] = []
@@ -27,11 +19,26 @@ final class UserListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.refreshControl = UIRefreshControl()
+        
+        if let refreshControl = self.refreshControl {
+            refreshControl.attributedTitle = NSAttributedString(string: "당겨서 새로고침")
+            refreshControl.addTarget(self, action: #selector(configure), for: .valueChanged)
+            
+            tableView.addSubview(refreshControl)
+        }
+        
         setNaviagtionBar()
         
         tableView.register(UserListCell.self, forCellReuseIdentifier: "UserListCell")
         tableView.rowHeight = 80
         
+        tableView.refreshControl = refreshControl
+        
+        configure()
+    }
+    
+    @objc private func configure() {
         ref = Database.database().reference()
         ref.observe(.value) { snapshot in
             guard let value = snapshot.value as? [String: Any] else { return }
@@ -50,6 +57,7 @@ final class UserListViewController: UITableViewController {
                 //view갱신은 메인 스레드에서 해야함
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
                 }
             } catch let error {
                 print("ERROR JSON Parsing \(error.localizedDescription)")
@@ -63,11 +71,11 @@ private extension UserListViewController {
         navigationItem.title = "참여자 정보"
         
         //rightBarButtonItem 추가 영역
-        let rightButton = UIBarButtonItem(
-            image: UIImage(systemName: "ellipsis"), style: .plain, target: self, action: nil
-        )
-        
-        navigationItem.rightBarButtonItem = rightButton
+//        let rightButton = UIBarButtonItem(
+//            image: UIImage(systemName: "ellipsis"), style: .plain, target: self, action: nil
+//        )
+//
+//        navigationItem.rightBarButtonItem = rightButton
     }
 }
 
@@ -90,6 +98,8 @@ extension UserListViewController {
         let detailViewContoller = UserDetailViewController()
         
         detailViewContoller.userDetail = selectedUser
+        detailViewContoller.totalWinCount = totalWinCount
+        
         self.show(detailViewContoller, sender: totalWinCount)
     }
 }

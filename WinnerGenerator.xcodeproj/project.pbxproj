@@ -11,7 +11,6 @@
 		E527626127B92B5700E5E91A /* mainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E527626027B92B5700E5E91A /* mainView.swift */; };
 		E54AF0EE27B3F191000DEEB9 /* UserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54AF0ED27B3F191000DEEB9 /* UserListViewController.swift */; };
 		E54AF0F127B3F29E000DEEB9 /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54AF0EF27B3F29E000DEEB9 /* UserListCell.swift */; };
-		E54AF0F227B3F29E000DEEB9 /* UserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E54AF0F027B3F29E000DEEB9 /* UserListCell.xib */; };
 		E54AF0F527B3FFB1000DEEB9 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = E54AF0F427B3FFB1000DEEB9 /* Kingfisher */; };
 		E54AF0F827B402A6000DEEB9 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54AF0F727B402A6000DEEB9 /* UserDetailViewController.swift */; };
 		E583727627B822980040A289 /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = E583727527B822980040A289 /* Charts */; };
@@ -34,7 +33,6 @@
 		E527626027B92B5700E5E91A /* mainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainView.swift; sourceTree = "<group>"; };
 		E54AF0ED27B3F191000DEEB9 /* UserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewController.swift; sourceTree = "<group>"; };
 		E54AF0EF27B3F29E000DEEB9 /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
-		E54AF0F027B3F29E000DEEB9 /* UserListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListCell.xib; sourceTree = "<group>"; };
 		E54AF0F727B402A6000DEEB9 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
 		E5E720F027AFCEF0001928F6 /* WinnerGenerator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WinnerGenerator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E720F327AFCEF0001928F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 			children = (
 				E54AF0ED27B3F191000DEEB9 /* UserListViewController.swift */,
 				E54AF0EF27B3F29E000DEEB9 /* UserListCell.swift */,
-				E54AF0F027B3F29E000DEEB9 /* UserListCell.xib */,
 			);
 			path = UserList;
 			sourceTree = "<group>";
@@ -207,7 +204,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E54AF0F227B3F29E000DEEB9 /* UserListCell.xib in Resources */,
 				E5E7211127B016DE001928F6 /* UserList.json in Resources */,
 				E5E7210027AFCEF1001928F6 /* LaunchScreen.storyboard in Resources */,
 				E5E7211327B0178F001928F6 /* GoogleService-Info.plist in Resources */,

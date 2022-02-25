@@ -12,7 +12,7 @@ import SwiftUI
 
 final class UserDetailViewController: UIViewController {
     var userDetail: User?
-    var totalWinCount: Int?
+    var totalWinCount: Int? //전체인원의 누적 당첨 횟수
     
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
@@ -153,17 +153,17 @@ final class UserDetailViewController: UIViewController {
     }()
     
     private lazy var winCountTitleLabel: UILabel = {
-         let label = UILabel()
-         label.textColor = .label
-         label.font = .systemFont(ofSize: 20.0, weight: .bold)
+        let label = UILabel()
+        label.textColor = .label
+        label.font = .systemFont(ofSize: 20.0, weight: .bold)
         //label.text = "당첨횟수"
-         label.textAlignment = .left
+        label.textAlignment = .left
         
         let attributedString = NSMutableAttributedString(string: "")
         
         let imageAttachment = NSTextAttachment()
         imageAttachment.image = UIImage(systemName: "bolt.square")?.withRenderingMode(.alwaysTemplate).withTintColor(.systemBlue)
-        imageAttachment.bounds = CGRect(x: 0, y: -2, width: 18, height: 18)
+        imageAttachment.bounds = CGRect(x: -6, y: -2, width: 18, height: 18)
     
         attributedString.append(NSAttributedString(attachment: imageAttachment))
         attributedString.append(NSAttributedString(string: " 당첨횟수"))
@@ -171,7 +171,7 @@ final class UserDetailViewController: UIViewController {
         label.attributedText = attributedString
         label.sizeToFit()
          
-         return label
+        return label
     }()
     
     private lazy var winCountLabel: UILabel = {
@@ -185,13 +185,25 @@ final class UserDetailViewController: UIViewController {
     }()
     
     private lazy var totalwinCountTitleLabel: UILabel = {
-         let label = UILabel()
-         label.textColor = .label
-         label.font = .systemFont(ofSize: 20.0, weight: .bold)
-         label.text = "당첨횟수"
-         label.textAlignment = .left
+        let label = UILabel()
+        label.textColor = .label
+        label.font = .systemFont(ofSize: 20.0, weight: .bold)
+        //label.text = "당첨확률"
+        label.textAlignment = .left
+        
+        let attributedString = NSMutableAttributedString(string: "")
+        
+        let imageAttachment = NSTextAttachment()
+        imageAttachment.image = UIImage(systemName: "hands.clap")?.withRenderingMode(.alwaysTemplate).withTintColor(.systemBlue)
+        imageAttachment.bounds = CGRect(x: 0, y: -2, width: 18, height: 18)
+    
+        attributedString.append(NSAttributedString(attachment: imageAttachment))
+        attributedString.append(NSAttributedString(string: " 당첨확률"))
+    
+        label.attributedText = attributedString
+        label.sizeToFit()
          
-         return label
+        return label
     }()
     
     private lazy var totalWinCountLabel: UILabel = {
@@ -210,6 +222,7 @@ final class UserDetailViewController: UIViewController {
         setUILayout()
         
         guard let detail = userDetail else { return }
+        guard let totalWins = totalWinCount else { return }
         
         //Kingfisher 사용 구문 (이미지를 다운로드 받지 않고 URL형태를 이미지로 보여줌)
         let imageURL = URL(string: detail.imageURL)
@@ -222,7 +235,7 @@ final class UserDetailViewController: UIViewController {
         winCountLabel.text = "\(detail.wincount)회"
         
         //당첨확률 double형 변환, 소숫점 아래 2자리까지 표시
-        let winRate: Double = Double(detail.wincount) / Double(10.0) * 100
+        let winRate: Double = Double(detail.wincount) / Double(totalWins) * 100
                 
         totalWinCountLabel.text = "\(String(format: "%.2f", winRate))%"
     }
@@ -234,23 +247,23 @@ private extension UserDetailViewController {
         view.backgroundColor = .systemBackground
         view.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 0, right: 20)
         
-        let titleStackView = UIStackView(arrangedSubviews: [teamTitleLabel, nicknameTitleLabel, realnameTitleLabel, ageTitleLabel, winCountTitleLabel])
+        let titleStackView = UIStackView(arrangedSubviews: [teamTitleLabel, nicknameTitleLabel, realnameTitleLabel, ageTitleLabel, winCountTitleLabel, totalwinCountTitleLabel])
         titleStackView.axis = .vertical
         titleStackView.alignment = .leading
         titleStackView.distribution = .fill
         titleStackView.spacing = 20.0
         
-        let contentStackView = UIStackView(arrangedSubviews: [teamLabel, nicknameLabel, realnameLabel, ageLabel, winCountLabel])
+        let contentStackView = UIStackView(arrangedSubviews: [teamLabel, nicknameLabel, realnameLabel, ageLabel, winCountLabel, totalWinCountLabel])
         contentStackView.axis = .vertical
         contentStackView.alignment = .leading
-        contentStackView.distribution = .fill
+        contentStackView.distribution = .fillEqually
         contentStackView.spacing = 20.0
         
         let horizonStackView = UIStackView(arrangedSubviews: [titleStackView, contentStackView])
         horizonStackView.axis = .horizontal
         horizonStackView.alignment = .top
         horizonStackView.distribution = .fill
-        horizonStackView.spacing = 10.0
+        horizonStackView.spacing = 20.0
         
         [imageView, horizonStackView].forEach {
             view.addSubview($0)
@@ -266,8 +279,8 @@ private extension UserDetailViewController {
         horizonStackView.snp.makeConstraints {
             $0.top.equalTo(imageView.snp.bottom).offset(90.0)
             $0.leading.equalToSuperview().offset(20.0)
-            $0.width.equalTo(170.0)
-            $0.height.equalTo(400.0)
+            $0.width.equalTo(200.0)
+            $0.height.equalTo(300.0)
         }
     }
 }

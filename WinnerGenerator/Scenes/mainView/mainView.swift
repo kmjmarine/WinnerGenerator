@@ -56,7 +56,7 @@ final class mainView: UIView {
     
     lazy var pieChartView: PieChartView = {
         let chartView = PieChartView()
-        chartView.backgroundColor = .tertiaryLabel
+        chartView.backgroundColor = .systemBackground
         
         return chartView
     }()
